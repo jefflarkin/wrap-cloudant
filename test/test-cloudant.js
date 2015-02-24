@@ -30,20 +30,21 @@ describe('Wrapped Cloudant Connection', function(){
   it('should connect with the wrapper', function *()
   {
     var Cloudant = require('../lib/wrap-cloudant');
-    yield Cloudant.connect(options);
+    yield Cloudant.connect(options, process.env.CLOUDANT_DATABASE);
+    assert(this.cloudant);
     assert(this.db);
   });
   it('should get a record by id', function *()
   {
     var Cloudant = require('../lib/wrap-cloudant');
-    yield Cloudant.connect(options);
+    yield Cloudant.connect(options, process.env.CLOUDANT_DATABASE);
     var body = yield Cloudant.get('409b918243e7f84eb568acd22037cbaf');                           
     assert(body[0]._id === '409b918243e7f84eb568acd22037cbaf');
   });
   it('should list records', function *()
   {
     var Cloudant = require('../lib/wrap-cloudant');
-    yield Cloudant.connect(options);
+    yield Cloudant.connect(options, process.env.CLOUDANT_DATABASE);
     var body = yield Cloudant.list();
     assert(body[0].total_rows === body[0].rows.length);
   })
