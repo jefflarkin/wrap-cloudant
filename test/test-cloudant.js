@@ -47,5 +47,12 @@ describe('Wrapped Cloudant Connection', function(){
     yield Cloudant.connect(options, process.env.CLOUDANT_DATABASE);
     var body = yield Cloudant.list();
     assert(body[0].total_rows === body[0].rows.length);
+  });
+  it('should respond to ping', function *()
+  {
+    var Cloudant = require('../lib/wrap-cloudant');
+    yield Cloudant.connect(options, process.env.CLOUDANT_DATABASE);
+    var response = yield Cloudant.ping();
+    assert(response.couchdb);
   })
 });
