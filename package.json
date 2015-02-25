@@ -1,0 +1,23 @@
+{
+  "name": "wrap-cloudant",
+  "version": "1.0.0",
+  "description": "A simple library that wraps a subset of the functions provided in the cloudant npm package for use with ES6 generators.",
+  "main": "lib/wrap-cloudant.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Jeff Larkin <jefflarkin@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "cloudant".
+    "generators",
+    "co"
+  ],
+  "devDependencies": {
+    "co-mocha": "^1.1.0",
+    "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "cloudant": "^1.0.0-beta3"
+  }
+}
