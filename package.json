@@ -9,7 +9,7 @@
   "author": "Jeff Larkin <jefflarkin@gmail.com>",
   "license": "MIT",
   "keywords": [
-    "cloudant".
+    "cloudant",
     "generators",
     "co"
   ],
