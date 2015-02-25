@@ -9,17 +9,13 @@ var assert   = require('assert'),
 // * CLOUDANT_PASSWORD - The API key password
 // * CLOUDANT_DATABASE - A Database to use
 describe('Cloudant Connection', function(){
+  // Sanity check that cloudant connects without the wrappers.
   it('should connect successfully with a callback', function(done){
-    // How can I convert this to using generators
     var Cloudant = require('cloudant')({account: process.env.CLOUDANT_USER,
                                         key:process.env.CLOUDANT_KEY,
                                         password:process.env.CLOUDANT_PASSWORD},
                                         function(err, cloudant, reply){
                                           if(err) return done(err);
-                                          /*var db = cloudant.use('indieweb');
-                                          db.get('409b918243e7f84eb568acd22037cbaf', function(err2, body){
-                                            console.log([err2,body]);
-});*/
                                           done();
                                         });
   });
