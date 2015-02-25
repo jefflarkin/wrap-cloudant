@@ -7,6 +7,7 @@ var assert   = require('assert'),
 // * CLOUDANT_USER     - The cloudant username
 // * CLOUDANT_KEY      - The API key
 // * CLOUDANT_PASSWORD - The API key password
+// * CLOUDANT_DATABASE - A Database to use
 describe('Cloudant Connection', function(){
   it('should connect successfully with a callback', function(done){
     // How can I convert this to using generators
