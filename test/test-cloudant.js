@@ -29,7 +29,7 @@ describe('Wrapped Cloudant Connection', function(){
   it('should connect with the wrapper', function *()
   {
     Cloudant = require('../lib/wrap-cloudant');
-    yield Cloudant.connect(options, process.env.CLOUDANT_DATABASE);
+    yield Cloudant.connect(options);
     assert(this.cloudant);
   });
   it('should respond to ping', function *()
